@@ -7,6 +7,7 @@ urlpatterns = [
 
     path('dashboard/',views.dashboard),
     path('profil/',views.profil),
+    path('matakuliah/',views.matakuliah),
 
 ]
 
