@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+   
+<div class="row">
+  <div class="col-md-12">
+    <div class="row pb-2"> 
+        <div class="col-sm-12">
+            <a href="{% url 'tambah_Jurusan' %}" class="btn btn-primary" >Tambah</a>
+        </div>
+       
+    </div>
+    <div class="row">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">KODE</th>
+              <th scope="col">PROGRAM STUDI</th>
+              <th scope="col">JENJANG</th>
+              <th scope="col">AKSI</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </body>
+        </table>
+    </div>
+  </div>
+</div>
+    {% endblock content %}
