@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'perkuliahan',
+    'crispy_forms',
+    'crispy_bootstrap4',
+
 ]
 
 MIDDLEWARE = [
@@ -71,6 +74,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'akademik.wsgi.application'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 
 # Database
@@ -121,8 +126,24 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+     
+MEDIA_URL = 'media/'
+MEDIA_ROOT =(BASE_DIR / 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    
+    messages.DEBUG:'debug',
+    messages.INFO:' info',
+    messages.SUCCESS:'success',
+    messages.WARNING:'warning',
+    messages.ERROR:'error',
+    
+}

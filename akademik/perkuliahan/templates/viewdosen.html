@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" style="width: 18rem;">
+      <img src="{{dosen.foto.url}}." class="card-img-top" alt="card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{dosen.namadosen | title}}</h5>
+        <p class="card-text">
+          <ol> 
+            <ul>NIDN: {{dosen.nidn}}</ul>
+            <ul>Jurusan: {{dosen.jurusan.namajurusan}}</ul>
+
+          </ol>
+        </p>
+        <a href="{{dosen.cv.url}}" download="{{dosen.cv.url}}" target="_blank" class="btn btn-primary"><i class="fa fa-search"></i> Riwayat Hidup</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+

@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-   
 <div class="row">
   <div class="col-md-12">
     <form method="POST">
@@ -9,7 +8,7 @@
       {{form | crispy}}
       <div class='pt-2'>
         <button class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Simpan </button>
-        <a href= {% url 'manage_jurusan' %} class= 'btn btn-danger btn-sm'><i class="fa-solid fa-xmark"></i> Batal</a>
+        <a href= {% url 'manage_mahasiswa' %} class= 'btn btn-danger btn-sm'><i class="fa-solid fa-xmark"></i> Batal</a>
       </div>
     </form>
   </div>

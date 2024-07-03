@@ -4,7 +4,7 @@
   <div class="col-md-12">
     <div class="row pb-2"> 
       <div class="col-sm-12">
-        <a href="{% url 'tambah_mahasiswa' %}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></a>
+        <a href="{% url 'tambah_dosen' %}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></a>
       </div>
     </div>
     <div class="row">
@@ -12,26 +12,28 @@
         <thead>
           <tr>
             <th scope="col">NO</th>
-            <th scope="col">NIM</th>
+            <th scope="col">NIDN</th>
             <th scope="col">NAMA</th>
-            <th scope="col">JENIS KELAMIN</th>
+            <th scope="col">TANGGAL LAHIR</th>
             <th scope="col">EMAIL</th>
+            <th scope="col">GELAR</th>
             <th scope="col">JURUSAN</th>
             <th scope="col">AKSI</th>
           </tr>
         </thead>
         <tbody>
-          {% for a in mhs %}
+          {% for a in dosen %}
           <tr>
             <td>{{ forloop.counter }}</td>
-            <td>{{ a.nim }}</td> 
-            <td>{{ a.namalengkap }}</td>
-            <td>{{ a.jk }}</td>
-            <td>{{ a.email }}</td>
-            <td>{{ a.jurusan }}</td>
+            <td>{{ a.nidn }}</td> 
+            <td>{{ a.namadosen }}</td>
+            <td>{{ a.tgllahir }}</td>
+            <td>{{ a.templahir }}</td>
+            <td>{{ a.gelar }}</td>
+            <td>{{ a.jurusan.namajurusan }}</td>
             <td>
               <a href="{% url "edit_mahasiswa" a.id %}" class="btn btn-warning btn-sm " title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
-              <!--<a href="{% url "hapus_jurusan" a.id %}" class="btn btn-danger btn-sm ">Hapus</a>-->
+              <a href="{% url 'view_dosen' a.id  %}" class="btn btn-success btn-sm " title="detail"><i class ="fa fa-search"></i> </a>
               <button type="button" class="btn btn-danger btn-sm" title="Hapus" data-bs-toggle="modal" data-bs-target="#hapus-{{a.id}}">
                 <i class="fa-solid fa-trash"></i>
               </button>
